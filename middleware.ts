@@ -23,7 +23,7 @@ export default auth((req) => {
 
     if (isAuthRoute) {
         if (isLoggedIn) {
-            return Response.redirect(new URL("/settings", nextUrl))
+            return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl))
         }
         return null;
     }
@@ -33,8 +33,7 @@ export default auth((req) => {
     }
     return null;
 
-}
-);
+});
 
 
 export const config = {
